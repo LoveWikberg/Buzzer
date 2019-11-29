@@ -8,6 +8,13 @@ namespace Buzzer.Hubs
 {
     public class BuzzerHub : Hub
     {
+        public override Task OnConnectedAsync()
+        {
+            //HttpRuntime.Cache.Insert(key, data, null, DateTime.Now.AddMinutes(180), System.Web.Caching.Cache.NoSlidingExpiration);
 
+
+
+            return base.OnConnectedAsync();
+        }
     }
 }

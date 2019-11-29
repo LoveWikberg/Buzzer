@@ -28,7 +28,10 @@ namespace Buzzer
             }
 
             app.UseStaticFiles();
-            app.UseMvcWithDefaultRoute();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute("default", "{controller=Buzzer}/{action=Index}");
+            });
         }
     }
 }
