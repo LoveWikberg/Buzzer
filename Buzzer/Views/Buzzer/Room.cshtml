@@ -1,1 +1,20 @@
 ﻿
+<div class="contender-container">
+    <h1 class="contender-text">Tryck på knappen för att svara</h1>
+    <input type="button" id="buzzer" class="btn btn-primary" />
+</div>
+
+
+<div class="main-screen-container">
+    <h1 id="game-text"></h1>
+    <div id="player-wrapper">
+    </div>
+    <div class="btn-container">
+        <input type="button" class="btn btn-success" id="reset-buzzer" value="Återställ" />
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/js/signalr/dist/browser/signalr.js"></script>
+    <script src="~/Scripts/buzzer.js"></script>
+}

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Buzzer.Hubs;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -17,6 +18,7 @@ namespace Buzzer
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc(option => option.EnableEndpointRouting = false);
+            services.AddSignalR();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -26,11 +28,17 @@ namespace Buzzer
             {
                 app.UseDeveloperExceptionPage();
             }
-
             app.UseStaticFiles();
             app.UseMvc(routes =>
             {
                 routes.MapRoute("default", "{controller=Buzzer}/{action=Index}");
+            });
+
+            app.UseRouting();
+
+            app.UseEndpoints(conf =>
+            {
+                conf.MapHub<BuzzerHub>("/buzzerHub");
             });
         }
     }

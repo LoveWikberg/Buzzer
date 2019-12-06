@@ -1,41 +1,193 @@
 ﻿body {
-    margin:0;
+    margin: 0;
+    background-color: #eeef7a;
+    overflow-x: hidden;
+}
+
+.hide {
+    visibility: hidden;
 }
 
 .main-screen-container {
-    max-width: 950px;
+    max-width: 1100px;
     height: 100vh;
     margin: auto;
     display: flex;
-    justify-content: space-evenly;
-    align-items:center;
-    /*flex-wrap:wrap;*/
+    align-items: center;
+    flex-wrap: wrap;
 }
+
+    .main-screen-container #game-text {
+        width: 100%;
+        text-align: center;
+        font-size: 85px;
+        height: 0;
+    }
+
+    .main-screen-container #player-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .main-screen-container .btn-container {
+        margin-top: -70px;
+        width: 100%;
+        text-align: center;
+    }
+
+        .main-screen-container .btn-container input {
+            width: 200px;
+            font-size: 25px;
+        }
 
     .main-screen-container .player-icon-wrapper {
         width: 300px;
         height: 320px;
         text-align: center;
-        /*padding-top: 40%;*/ /*Ska göra så att height är samma som width*/
     }
 
         .main-screen-container .player-icon-wrapper .img {
-            background-color: red;
+            background-image: url('../image/lovewikberg.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
             border-radius: 50%;
             width: 300px;
-            height: 300px
+            height: 300px;
+            transition: 1s;
         }
 
-        .main-screen-container .player-icon-wrapper .player-name {
-            margin-top:10px;
-            font-size:30px;
-        }
+    .main-screen-container .buzzed .img {
+        margin-top: -30px;
+    }
+
+    .main-screen-container .player-icon-wrapper .player-name {
+        margin-top: 10px;
+        font-size: 30px;
+    }
+
+#player-wrapper-vertical {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+    #player-wrapper-vertical .player-icon-wrapper {
+        width: 250px;
+        height: 270px;
+        text-align: center;
+        margin: 15px auto;
+    }
+
+    #player-wrapper-vertical .img {
+        background-image: url('../image/lovewikberg.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 50%;
+        width: 230px;
+        height: 230px;
+        transition: 1s;
+        margin: auto;
+    }
+
+    #player-wrapper-vertical .player-name {
+        margin-top: 10px;
+        font-size: 25px;
+    }
+
+.content-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+    .content-container .half-img {
+        max-height:400px;
+        /*width: 1000px;*/
+        /*height: 400px;*/
+    }
+
+    .content-container .full-img {
+        max-height:900px;
+        max-width:900px;
+        /*height: 900px;*/
+        /*width: 600px;*/
+    }
 
 .contender-container {
+    height: 100vh;
     width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
     text-align: center;
 }
 
-    .contender-container * {
-        margin: auto;
+    .contender-container .contender-text {
+        position: fixed;
+        top: 40px;
     }
+
+    .contender-container #buzzer {
+        width: 90%;
+        padding-top: 80%;
+        background-color: #2bff0a;
+        border-radius: 50%;
+    }
+
+.startpage-container {
+    padding-top: 100px;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+    .startpage-container ul {
+        list-style: none;
+    }
+
+    .startpage-container li {
+        padding: 0;
+        color: red;
+    }
+
+    .startpage-container form {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .startpage-container #intro-text {
+        font-size: 50px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .startpage-container .room-input {
+        text-align: center;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    .startpage-container #join-btn {
+        width: 100%;
+    }
+
+@media screen and (max-width:900px) {
+    .main-screen-container {
+        display: none;
+    }
+
+    #btn-create-room {
+        display: none;
+    }
+}
+
+@media screen and (min-width:900px) {
+    .contender-container {
+        display: none;
+    }
+}
